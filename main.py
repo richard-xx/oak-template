@@ -8,10 +8,10 @@ from depthai_nodes.node.parsing_neural_network import ParsingNeuralNetwork
 
 model = "luxonis/yolov6-nano:r2-coco-512x288"
 
-visualizer = dai.RemoteConnection(httpPort=9000)
+visualizer = dai.RemoteConnection(httpPort=8082)
 device = dai.Device()
 
-api_key = "<your_api_key>"
+api_key = "<your api key>" # Replace with your actual API key
 
 
 with dai.Pipeline(device) as pipeline:
@@ -41,6 +41,7 @@ with dai.Pipeline(device) as pipeline:
         nn_with_parser.out,
         label_map=nn_archive.getConfigV1().model.heads[0].metadata.classes,
     )
+    
 
     print("Pipeline created.")
 

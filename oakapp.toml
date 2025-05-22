@@ -3,7 +3,7 @@ app_version = "1.0.0"
 
 prepare_container = [
     { type = "RUN", command = "apt-get update" },
-    { type = "RUN", command = "apt-get install -y python3 python3-pip wget" },
+    { type = "RUN", command = "apt-get install -y python3 python3-pip wget git" },
 ]
 
 prepare_build_container = []
