@@ -8,6 +8,10 @@ prepare_container = [
 
 prepare_build_container = []
 
-build_steps = ["pip3 install -r /app/requirements.txt --break-system-packages"]
+build_steps = ["uv pip install -r /app/pyproject.toml --system"]
 
 entrypoint = ["bash", "-c", "python3 /app/main.py"]
+
+[base_image]
+image_name = "astral/uv"
+image_tag = "bookworm-slim"
