@@ -1,0 +1,13 @@
+[project]
+name = "oak-template"
+version = "0.1.0"
+description = "Add your description here"
+readme = "README.md"
+requires-python = ">=3.10"
+dependencies = [
+    "depthai>=3.0.0rc2",
+    "depthai-nodes",
+]
+
+[tool.uv.sources]
+depthai-nodes = { git = "https://github.com/luxonis/depthai-nodes.git", rev = "main" }
